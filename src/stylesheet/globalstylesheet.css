@@ -1,0 +1,90 @@
+/* --- Global stylesheet 
+
+Overordnet guide til Astro:
+https://docs.astro.build/en/core-concepts/project-structure/ 
+
+--- */
+
+/* ---1. Resets
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ---2. Import af fonts ---*/
+@font-face {
+  font-family: "AbrilFatface";
+  src: url(/public/fonts/Abril_Fatface/AbrilFatface-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Amiko";
+  src: url(/public/fonts/Amiko/Amiko-Regular.ttf);
+}
+
+/* ---3. Definition af farver ---*/
+
+html {
+  --primary: #798f8a;
+  --secondary: #923a21;
+  --tertiary: #fbe9dd;
+  --quarternary: #f1cea4;
+  --quinary: #fcb0b5;
+}
+
+/* ---4. Definition af fonte ---*/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: AbrilFatface;
+  font-size: 40px;
+  /* --- OBS: dobbelttjek om dette clasher med ovenstående reset, hvor alle p og h får "overflow-wrap: break-word;" ---*/
+}
+
+p {
+  font-family: Amiko;
+  font-size: 20px;
+}
+
+/* ---5.  ---*/
