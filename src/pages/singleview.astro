@@ -1,7 +1,29 @@
 ---
 import "../stylesheet/globalstylesheet.css";
----
 
+//Følg dette link: https://docs.astro.build/en/reference/api-reference/#getstaticpaths
+//Jonas' video: 
+export async function getStaticPaths() {
+    const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork"
+    const options = {
+		method:"GET",
+		headers: {
+			apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsaWpjbmVkdmd0cHBxem13aWNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA3Mzc1NDYsImV4cCI6MjAxNjMxMzU0Nn0.ZB94RLQFTwNWgedKWPsDaUC6axpOb001oC9_gVqzCnY"
+
+	}}
+
+  const data = await fetch(url, options).then(response => response.json());
+
+  return data.map((post) => {
+    return {
+      params: { slug: post.slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -15,9 +37,7 @@ import "../stylesheet/globalstylesheet.css";
 
         </header>
         <main>
-		    <h1>This is a heading</h1>
-		    <p>And here is some paragraph text</p>
-		    <script src="../js/mainjs"></script>
+		    <h1>{post.title}</h1>
         </main>
         <footer>
             
