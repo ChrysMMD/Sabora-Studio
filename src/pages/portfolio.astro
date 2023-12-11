@@ -1,9 +1,9 @@
 ---
 import "../stylesheet/globalstylesheet.css";
-import Card from "../components/Card.astro";
 
-const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork?limit=4";
-// med "?limit=4" begrænser vi outputtet til at vise de første 4 objekter i vores database
+
+const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork";
+// her henter vi samtlige objekter i artwork - i modsætning til på index, hvor vi lavede en begrænsning "?limit=4" 
 
 const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsaWpjbmVkdmd0cHBxem13aWNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA3Mzc1NDYsImV4cCI6MjAxNjMxMzU0Nn0.ZB94RLQFTwNWgedKWPsDaUC6axpOb001oC9_gVqzCnY";
@@ -24,7 +24,7 @@ const data = await response.json();
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Portfolio</title>
 	</head>
 	<body>
         <header>
@@ -33,13 +33,6 @@ const data = await response.json();
         <main>
 		    <h1>This is a heading</h1>
 		    <p>And here is some paragraph text</p>
-			<section>
-				{
-					data.map(artpiece=>{
-						return <Card data={artpiece}/>
-					})
-				}
-			</section>
         </main>
         <footer>
             

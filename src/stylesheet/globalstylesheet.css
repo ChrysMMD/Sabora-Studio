@@ -8,6 +8,7 @@ https://docs.astro.build/en/core-concepts/project-structure/
 3. Definition af farver
 4. Definition af fonte
 5. Definition af grids
+6. Media Query
 
 --- */
 
@@ -130,3 +131,5 @@ p {
 }
 
 /* ---5. Grids ---*/
+
+/* ---6. Media Query ---*/
