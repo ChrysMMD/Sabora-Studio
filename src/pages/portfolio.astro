@@ -32,7 +32,7 @@ const data = await response.json();
     </header>
     <main>
       <div class="heading">
-        <h1>Portfolio</h1>
+        <h2>Portfolio</h2>
       </div>
       <section class="artwork">
         {
@@ -57,12 +57,24 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.artwork {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 1em;
+}
+@media only screen and (min-width: 600px) {
+
 .artwork {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-template-rows: 1fr;
   gap: 1em;
 }
+}
+
+
 </style>
 
 <!-- ovenstående autofill + "minmax" på fx 160px, betyder at: 
