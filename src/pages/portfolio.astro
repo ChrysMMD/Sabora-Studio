@@ -1,17 +1,17 @@
 ---
 import "../stylesheet/globalstylesheet.css";
 import Card from "../components/Card.astro";
-
+import Navigation from "../components/Navigation.astro";
 const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork";
-// her henter vi samtlige objekter i artwork - i modsætning til på index, hvor vi lavede en begrænsning "?limit=4" 
+// her henter vi samtlige objekter i artwork - i modsætning til på index, hvor vi lavede en begrænsning "?limit=4"
 
 const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsaWpjbmVkdmd0cHBxem13aWNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA3Mzc1NDYsImV4cCI6MjAxNjMxMzU0Nn0.ZB94RLQFTwNWgedKWPsDaUC6axpOb001oC9_gVqzCnY";
 
 const options = {
-	headers: {
-		apikey: key
-	}
+  headers: {
+    apikey: key,
+  },
 };
 
 const response = await fetch(url, options);
@@ -19,30 +19,28 @@ const data = await response.json();
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Portfolio</title>
-	</head>
-	<body>
-        <header>
-			<a href="/">Index</a>
-        </header>
-        <main>
-		    <h1>Portfolio</h1>
-		    <p>And here is some paragraph text</p>
-			<section class="artwork">
-				{
-					data.map(artpiece=>{
-						return <Card data={artpiece}/>
-					})
-				}
-			</section>
-        </main>
-        <footer>
-            
-        </footer>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <h1>Portfolio</h1>
+      <p>And here is some paragraph text</p>
+      <section class="artwork">
+        {
+          data.map((artpiece) => {
+            return <Card data={artpiece} />;
+          })
+        }
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>
