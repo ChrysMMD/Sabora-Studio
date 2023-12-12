@@ -1,6 +1,8 @@
 ---
 import Navigation from "../../components/Navigation.astro";
 import "../../stylesheet/globalstylesheet.css";
+import Buttons from "../../components/Buttons.astro";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
   const data = await fetch(
@@ -38,9 +40,77 @@ console.log(myData);
       <Navigation />
     </header>
     <main>
-      <h2>{myData.title}</h2>
-      <p>{myData.description}</p>
-      <img src=`/imgs/${myData.imgpath}` alt={myData.title} />
+      <div class="heading">
+        <h2 class="artpiecetitle">{myData.title}</h2>
+      </div>
+      <div class="artpiece">
+        <img src=`/imgs/${myData.imgpath}` alt={myData.title} />
+      </div>
+      <div class="box">
+        <p>{myData.description}</p>
+        <div class="sizes">
+          <img src="/imgs/Etsy.webp"/>
+          <img src="/imgs/Etsy.webp"/>
+          <img src="/imgs/Etsy.webp"/>
+        </div>
+        <p class="howtobuy">How to buy this?</p>
+        <p>To buy my artwork, visit my profile on Etsy, or send med a DM on Instagram</p>
+        <div class="iconbox">
+          <Buttons variant="tertiary" text="Etsy" link="https://www.etsy.com/dk-en/shop/SABORAShop"/>
+          <Buttons variant="tertiary" text="Instagram" link="https://www.instagram.com/sabora_studio/"/>
+        </div>
+      </div>
+      
     </main>
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>
+
+<style>
+  main {
+    background-color: var(--lightsand);
+  }
+
+  .heading {
+    display: flex;
+    justify-content: center;
+  }
+
+  .artpiecetitle {
+    font-size: 35px;
+  }
+
+  .artpiece {
+    display: flex;
+    justify-content: center;
+  }
+
+  .box {
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* dette giver margin - men så er der ingen farve mellem main og footer? */
+    border-style: solid;
+    color: var(--green);
+    border-radius: 25px;
+    padding: 15px;
+  }
+
+  p {
+    color: var(--green);
+    font-size: 16px;
+  }
+
+  .howtobuy {
+    color: var(--brown);
+  }
+
+  .iconbox {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+</style>
