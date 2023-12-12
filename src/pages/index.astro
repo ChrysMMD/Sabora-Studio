@@ -3,6 +3,7 @@ import Buttons from "../components/Buttons.astro";
 import Navigation from "../components/Navigation.astro";
 import "../stylesheet/globalstylesheet.css";
 import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
 
 const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork?limit=4";
 // med "?limit=4" begrænser vi outputtet til at vise de første 4 objekter i vores database
@@ -45,6 +46,8 @@ const data = await response.json();
         }
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>
