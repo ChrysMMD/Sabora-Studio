@@ -2,6 +2,7 @@
 import "../stylesheet/globalstylesheet.css";
 import Card from "../components/Card.astro";
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork";
 // her henter vi samtlige objekter i artwork - i modsætning til på index, hvor vi lavede en begrænsning "?limit=4"
 
@@ -42,13 +43,23 @@ const data = await response.json();
         }
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>
 
-
 <style>
-body {
+  .body {
+    background-color: (var--lightsand);
+  }
+  .artwork {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 1em;
+  }
+  body {
     background-color: var(--lightsand);
   }
 .heading {
@@ -77,11 +88,9 @@ body {
 
 </style>
 
-<!-- ovenstående autofill + "minmax" på fx 160px, betyder at: 
-HVIS skærmbredden bliver 160px mindre, så fjerner den en column og fylder de tilbageværende columns ud med elementer.
-HVIS skærmbredden bliver 160px større, så tilføjer den en column og fylder ud.
--->
-
-
+<!-- ovenstående autofill + "minmax" på fx 160px, betyder at: HVIS skærmbredden bliver
+160px mindre, så fjerner den en column og fylder de tilbageværende columns ud med
+elementer. HVIS skærmbredden bliver 160px større, så tilføjer den en column og fylder
+ud. -->
 
 

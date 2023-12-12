@@ -3,6 +3,8 @@ import Buttons from "../components/Buttons.astro";
 import Navigation from "../components/Navigation.astro";
 import "../stylesheet/globalstylesheet.css";
 import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
+import Infographic from "../components/Infographic.astro";
 
 const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork?limit=4";
 // med "?limit=4" begrænser vi outputtet til at vise de første 4 objekter i vores database
@@ -44,7 +46,36 @@ const data = await response.json();
           })
         }
       </section>
+      <section class="infographic">
+        <h2>Shippingjourney</h2>
+        <div class="indhold">
+          <Infographic
+            billede=""
+            overskrift="Order"
+            beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+          />
+          <Infographic
+            billede=""
+            overskrift="Print"
+            beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+          />
+          <Infographic
+            billede=""
+            overskrift="Mail"
+            beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+          />
+          <Infographic
+            billede=""
+            overskrift="Home"
+            beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+          />
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>
+
+<style></style>
