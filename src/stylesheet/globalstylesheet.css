@@ -1,7 +1,9 @@
 /* --- Global stylesheet 
 
 Overordnet guide til Astro:
-https://docs.astro.build/en/core-concepts/project-structure/ 
+https://docs.astro.build/en/core-concepts/project-structure/
+Jonas' playliste om astro: 
+https://www.youtube.com/watch?v=vJGsNtqlJ98&list=PLCx1FpZ4Dtb3_siiU1YtaIKJmZEzu8lje&index=1 
 
 1. Resets
 2. Import af fonts
@@ -132,4 +134,7 @@ p {
 
 /* ---5. Grids ---*/
 
-/* ---6. Media Query ---*/
+/* ---6. Media Query: https://www.w3schools.com/css/css_rwd_mediaqueries.asp ---*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {} */

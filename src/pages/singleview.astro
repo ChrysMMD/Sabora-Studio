@@ -1,4 +1,5 @@
 ---
+import Singlecard from "../components/Singlecard.astro";
 import "../stylesheet/globalstylesheet.css";
 
 //Følg dette link: https://docs.astro.build/en/reference/api-reference/#getstaticpaths
@@ -37,7 +38,11 @@ const { post } = Astro.props;
 
         </header>
         <main>
-		    <h1>{post.title}</h1>
+          {
+            post.map(artpiece=>{
+              return <Singlecard data={artpiece}/>
+            })
+          }
         </main>
         <footer>
             

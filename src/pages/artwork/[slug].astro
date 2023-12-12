@@ -1,0 +1,42 @@
+---
+export async function getStaticPaths() {
+    const data = await fetch(
+        "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork", 
+    {
+		method: "GET",
+		headers: {
+			apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsaWpjbmVkdmd0cHBxem13aWNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA3Mzc1NDYsImV4cCI6MjAxNjMxMzU0Nn0.ZB94RLQFTwNWgedKWPsDaUC6axpOb001oC9_gVqzCnY"
+        },
+    }
+).then((response) => response.json());
+
+return data.map((artpiece) => {
+    return {
+        params: { slug: artpiece.slug },
+        props: { myData: artpiece },
+    };
+});
+}
+const { myData } = Astro.props
+console.log(myData);
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+        <header>
+			<a href="/portfolio">Portfolio</a>
+			<a href="/singleview">Singleview</a>
+		</header>
+        <main>
+            <h2>{myData.title}</h2>
+            <p>{myData.description}</p>
+            <img src=`imgs/${myData.imgpath}` alt={myData.title}>
+        </main>
+    </body>
+</html>

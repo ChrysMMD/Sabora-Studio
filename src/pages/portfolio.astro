@@ -1,6 +1,6 @@
 ---
 import "../stylesheet/globalstylesheet.css";
-
+import Card from "../components/Card.astro";
 
 const url = "https://clijcnedvgtppqzmwicf.supabase.co/rest/v1/artwork";
 // her henter vi samtlige objekter i artwork - i modsætning til på index, hvor vi lavede en begrænsning "?limit=4" 
@@ -28,11 +28,18 @@ const data = await response.json();
 	</head>
 	<body>
         <header>
-
+			<a href="/">Index</a>
         </header>
         <main>
-		    <h1>This is a heading</h1>
+		    <h1>Portfolio</h1>
 		    <p>And here is some paragraph text</p>
+			<section class="artwork">
+				{
+					data.map(artpiece=>{
+						return <Card data={artpiece}/>
+					})
+				}
+			</section>
         </main>
         <footer>
             
