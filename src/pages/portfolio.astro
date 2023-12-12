@@ -31,8 +31,9 @@ const data = await response.json();
       <Navigation />
     </header>
     <main>
-      <h1>Portfolio</h1>
-      <p>And here is some paragraph text</p>
+      <div class="heading">
+        <h1>Portfolio</h1>
+      </div>
       <section class="artwork">
         {
           data.map((artpiece) => {
@@ -45,10 +46,17 @@ const data = await response.json();
   </body>
 </html>
 
+
 <style>
-  .body {
-    background-color: (var--lightsand);
+body {
+    background-color: var(--lightsand);
   }
+.heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .artwork {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -57,8 +65,11 @@ const data = await response.json();
 }
 </style>
 
-ovenstående autofill + "minmax" på fx 160px, betyder at: 
+<!-- ovenstående autofill + "minmax" på fx 160px, betyder at: 
 HVIS skærmbredden bliver 160px mindre, så fjerner den en column og fylder de tilbageværende columns ud med elementer.
 HVIS skærmbredden bliver 160px større, så tilføjer den en column og fylder ud.
+-->
+
+
 
 

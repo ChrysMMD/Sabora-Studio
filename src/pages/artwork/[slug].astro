@@ -1,5 +1,6 @@
 ---
 import Navigation from "../../components/Navigation.astro";
+import "../../stylesheet/globalstylesheet.css";
 
 export async function getStaticPaths() {
   const data = await fetch(
@@ -39,7 +40,7 @@ console.log(myData);
     <main>
       <h2>{myData.title}</h2>
       <p>{myData.description}</p>
-      <img src=`imgs/${myData.imgpath}` alt={myData.title} />
+      <img src=`/imgs/${myData.imgpath}` alt={myData.title} />
     </main>
   </body>
 </html>

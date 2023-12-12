@@ -122,14 +122,14 @@ h4,
 h5 {
   font-family: AbrilFatface;
   font-size: 40px;
-  color: var(--secondary);
+  color: var(--brown);
   /* --- OBS: dobbelttjek om dette clasher med ovenstående reset, hvor alle p og h får "overflow-wrap: break-word;" ---*/
 }
 
 p {
   font-family: Amiko;
   font-size: 20px;
-  color: var(--secondary);
+  color: var(--brown);
 }
 
 /* ---5. Grids ---*/
