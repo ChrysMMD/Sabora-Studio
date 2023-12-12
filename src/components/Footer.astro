@@ -3,22 +3,51 @@ import "../stylesheet/globalstylesheet.css";
 ---
 
 <div class="footer">
-  <p>SABORA STUDIO</p>
-  <p>casasabrin@me.dk</p>
-  <a href="#"><img src="#" alt="instagram" /></a>
-  <a href="#"><img src="#" alt="etsy" /></a>
+  <div class="info">
+    <p><b>SABORA STUDIO</b></p>
+    <p>casasabrin@me.dk</p>
+    <div class="logo">
+      <a href="#"
+        ><img src="../../public/imgs/Instagram.webp" alt="instagram" /></a
+      >
+      <a href="#"><img src="../../public/imgs/Etsy.webp" alt="etsy" /></a>
+    </div>
+  </div>
 </div>
 
 <style>
   .footer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-
     background-color: var(--green);
+    padding: 20px 0px;
 
     p {
       color: var(--lightsand);
+      text-align: center;
+      font-size: 10px;
+      margin-bottom: 10px;
     }
+  }
+
+  .info {
+    width: 7rem;
+  }
+
+  .logo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    margin-top: 15px;
+  }
+
+  .logo img {
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
