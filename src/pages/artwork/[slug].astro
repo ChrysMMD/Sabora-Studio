@@ -49,11 +49,20 @@ console.log(myData);
       <div class="box">
         <p>{myData.description}</p>
         <div class="sizes">
-          <img src="/imgs/Etsy.webp"/>
-          <img src="/imgs/Etsy.webp"/>
-          <img src="/imgs/Etsy.webp"/>
+          <div class="sizebox">
+            <img class="size" src="/icons/a3.svg"/>
+            <p class="dimensions">297 x 420 mm</p>
+          </div>
+          <div class="sizebox">
+            <img class="size" src="/icons/a4.svg"/>
+            <p class="dimensions">210 x 297 mm</p>
+          </div>
+          <div class="sizebox">
+            <img class="size" src="/icons/a5.svg"/>
+            <p class="dimensions">148 x 210 mm</p>
+          </div>
         </div>
-        <p class="howtobuy">How to buy this?</p>
+        <p class="howtobuy"><b>How to buy this?</b></p>
         <p>To buy my artwork, visit my profile on Etsy, or send med a DM on Instagram</p>
         <div class="iconbox">
           <Buttons variant="tertiary" text="Etsy" link="https://www.etsy.com/dk-en/shop/SABORAShop"/>
@@ -113,4 +122,26 @@ console.log(myData);
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  .sizebox {
+    display: flex;
+    align-items: center;
+  }
+
+  .size {
+    margin: 10px;
+  }
+
+  .dimensions {
+    color: var(--brown);
+  }
+
+  @media only screen and (min-width: 600px) {
+    body {
+      background-color: var(--lightsand);
+    }
+
+    
+  }
+
 </style>
