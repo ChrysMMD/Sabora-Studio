@@ -1,0 +1,102 @@
+---
+const { text, link, variant, size } = Astro.props;
+---
+
+<div class={variant}>
+  <div class="links">
+    <a href={link}>{text}</a>
+  </div>
+</div>
+
+<style>
+  /* ----- RESET CSS -----*/
+
+  /* ----- FONT DOWNLOAD ----- */
+  @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lexend+Deca:wght@200;400&display=swap");
+
+  @font-face {
+    font-family: "Abril Fatface", serif;
+    font-family: "Lexend Deca", sans-serif;
+  }
+
+  /* ----- LINK STYLING ----- */
+  .primary {
+    a,
+    a:active,
+    a:visited {
+      color: #fbe9dd;
+      font-family: Abril Fatface;
+      text-decoration: none;
+      font-size: 11px;
+    }
+
+    .links {
+      display: inline;
+      /* border: 1px solid #fcb0b5;
+      padding: 0px 20px; */
+    }
+
+    /*HOVER BOKS*/
+    a:hover {
+      border: 1px solid #fcb0b5;
+      padding: 4px 9px;
+      margin: -10px;
+    }
+  }
+
+  .secondary {
+    a,
+    a:active,
+    a:visited {
+      color: #fbe9dd;
+      font-family: Abril Fatface;
+      text-decoration: none;
+    }
+
+    .links {
+      /* margin-left: 6px; */
+      display: inline;
+      border: 1px solid #798f8a;
+      padding: 3px 20px;
+    }
+
+    /*HOVER BOKS*/
+    a:hover {
+      border: 1px solid #798f8a;
+      padding: 8px 12px;
+      margin-left: -13px;
+      margin-right: -13px;
+    }
+  }
+
+  .tertiary {
+    a,
+    a:active,
+    a:visited {
+      color: #923a21;
+      font-family: Abril Fatface;
+      text-decoration: none;
+    }
+
+    .links {
+      /* margin-left: 6px; */
+      display: inline;
+      border: 1px solid #fcb0b5;
+      padding: 3px 20px;
+    }
+
+    /*HOVER BOKS*/
+    a:hover {
+      border: 1px solid #fcb0b5;
+      padding: 8px 12px;
+      margin-left: -13px;
+      margin-right: -13px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .primary {
+      font-size: 16px;
+    }
+  }
+</style>

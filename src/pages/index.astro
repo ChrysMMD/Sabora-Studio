@@ -1,4 +1,6 @@
 ---
+import Buttons from "../components/Buttons.astro";
+import Navigation from "../components/Navigation.astro";
 import "../stylesheet/globalstylesheet.css";
 import Card from "../components/Card.astro";
 
@@ -9,9 +11,9 @@ const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsaWpjbmVkdmd0cHBxem13aWNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA3Mzc1NDYsImV4cCI6MjAxNjMxMzU0Nn0.ZB94RLQFTwNWgedKWPsDaUC6axpOb001oC9_gVqzCnY";
 
 const options = {
-	headers: {
-		apikey: key
-	}
+  headers: {
+    apikey: key,
+  },
 };
 
 const response = await fetch(url, options);
@@ -19,31 +21,29 @@ const data = await response.json();
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <header>
-			<a href="/portfolio">Portfolio</a>
-			<a href="/singleview">Singleview</a>
-		</header>
-        <main>
-		    <h1>This is a heading</h1>
-		    <p>And here is some paragraph text</p>
-			<section>
-				{
-					data.map(artpiece=>{
-						return <Card data={artpiece}/>
-					})
-				}
-			</section>
-        </main>
-        <footer>
-            
-        </footer>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/singleview">Singleview</a>
+    </header>
+    <main>
+      <h1>This is a heading</h1>
+      <p>And here is some paragraph text</p>
+      <section>
+        {
+          data.map((artpiece) => {
+            return <Card data={artpiece} />;
+          })
+        }
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>
