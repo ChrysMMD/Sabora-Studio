@@ -50,22 +50,22 @@ const data = await response.json();
         <h2>Shippingjourney</h2>
         <div class="indhold">
           <Infographic
-            billede=""
+            billede="../../public/icons/kort.svg"
             overskrift="Order"
             beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           />
           <Infographic
-            billede=""
+            billede="../../public/icons/print.svg"
             overskrift="Print"
             beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           />
           <Infographic
-            billede=""
+            billede="../../public/icons/mail.svg"
             overskrift="Mail"
             beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           />
           <Infographic
-            billede=""
+            billede="../../public/icons/hus.svg"
             overskrift="Home"
             beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           />
@@ -78,4 +78,24 @@ const data = await response.json();
   </body>
 </html>
 
-<style></style>
+<style>
+  h2 {
+    align-items: center;
+    text-align: center;
+  }
+  @media (min-width: 700px) {
+    .indhold {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      width: 100%;
+      background-color: var(--darksand);
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .infographic {
+      width: 100%;
+      background-color: var(--darksand);
+    }
+  }
+</style>
