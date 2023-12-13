@@ -1,0 +1,30 @@
+---
+const { tekst, navn } = Astro.props;
+---
+
+<div class="ramme">
+  <div class="tekstboks">
+    <p>{tekst}</p>
+    <p><b>{navn}</b></p>
+  </div>
+</div>
+
+<style>
+  .ramme {
+    background-color: var(--pink);
+    border: 5px solid var(--lightsand);
+    border-radius: 25px;
+    padding: 20px;
+    height: 100%;
+    width: 50%;
+    margin: auto;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .tekstboks {
+    height: 100%;
+  }
+</style>
