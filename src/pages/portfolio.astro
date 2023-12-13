@@ -33,7 +33,7 @@ const data = await response.json();
     </header>
     <main>
       <div class="heading">
-        <h1>Portfolio</h1>
+        <h2>Portfolio</h2>
       </div>
       <section class="artwork">
         {
@@ -62,22 +62,35 @@ const data = await response.json();
   body {
     background-color: var(--lightsand);
   }
-  .heading {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .artwork {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    grid-template-rows: 1fr;
-    gap: 1em;
-  }
+.heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.artwork {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 1em;
+}
+@media only screen and (min-width: 600px) {
+
+.artwork {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 1em;
+}
+}
+
+
 </style>
 
- ovenstående autofill + "minmax" på fx 160px, betyder at: HVIS skærmbredden bliver
+<!-- ovenstående autofill + "minmax" på fx 160px, betyder at: HVIS skærmbredden bliver
 160px mindre, så fjerner den en column og fylder de tilbageværende columns ud med
 elementer. HVIS skærmbredden bliver 160px større, så tilføjer den en column og fylder
-ud.
+ud. -->
+
 

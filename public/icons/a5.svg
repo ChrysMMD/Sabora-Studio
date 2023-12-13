@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 27.1 27.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #798f8a;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #798f8a;
+        font-family: DINCondensed-Bold, 'DIN Condensed';
+        font-size: 15px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <circle class="cls-1" cx="13.55" cy="13.55" r="12.55"/>
+    <text class="cls-2" transform="translate(7.63 19.01)"><tspan x="0" y="0">A5</tspan></text>
+  </g>
+</svg>
