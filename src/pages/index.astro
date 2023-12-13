@@ -81,6 +81,28 @@ const data = await response.json();
         <div id="slides">
           <h2>Reviews</h2>
 
+          <div class="full_reviews">
+            <Reviews
+              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien.  "
+              navn="Lærke Bue"
+            />
+
+            <Reviews
+              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien."
+              navn="Frederikke Nygaard"
+            />
+
+            <Reviews
+              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien.  "
+              navn="Chrystal Jørgensen"
+            />
+
+            <Reviews
+              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien."
+              navn="Hasse Bill"
+            />
+          </div>
+
           <div id="overflow">
             <div class="inner">
               <div class="slide slide_1">
@@ -146,6 +168,10 @@ const data = await response.json();
 </html>
 
 <style>
+  .full_reviews {
+    display: none;
+  }
+
   /* ----- CAUROSEL ----- 
   Link til code:
   https://codepen.io/anna_blok/pen/eYYRbQY
@@ -274,8 +300,10 @@ const data = await response.json();
       width: 100%;
       background-color: var(--darksand);
     }
+  }
 
-    #slides {
+  @media (min-width: 850px) {
+    #overflow {
       display: none;
     }
 
@@ -285,6 +313,14 @@ const data = await response.json();
 
     #controls {
       display: none;
+    }
+
+    .full_reviews {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-self: center;
     }
   }
 </style>

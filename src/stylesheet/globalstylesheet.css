@@ -137,7 +137,7 @@ p {
 /* ---6. Media Query: https://www.w3schools.com/css/css_rwd_mediaqueries.asp ---*/
 
 /* Medium devices (landscape tablets, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 850px) {
   main {
     width: 80%;
     margin: auto;
