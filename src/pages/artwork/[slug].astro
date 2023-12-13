@@ -40,13 +40,12 @@ console.log(myData);
       <Navigation />
     </header>
     <main>
-      <div class="heading">
-        <h2 class="artpiecetitle">{myData.title}</h2>
-      </div>
-      <div class="artpiece">
-        <img src=`/imgs/${myData.imgpath}` alt={myData.title} />
+      <div class="artpiecebox">
+        <h2 class="artpiecetitlemobile">{myData.title}</h2>
+        <img class="artpiece" src=`/imgs/${myData.imgpath}` alt={myData.title} />
       </div>
       <div class="box">
+        <h2 class="artpiecetitledesktop">{myData.title}</h2>
         <p>{myData.description}</p>
         <div class="sizes">
           <div class="sizebox">
@@ -63,7 +62,7 @@ console.log(myData);
           </div>
         </div>
         <p class="howtobuy"><b>How to buy this?</b></p>
-        <p>To buy my artwork, visit my profile on Etsy, or send med a DM on Instagram</p>
+        <p>To buy my artwork visit my profile on Etsy or send med a DM on Instagram.</p>
         <div class="iconbox">
           <Buttons variant="tertiary" text="Etsy" link="https://www.etsy.com/dk-en/shop/SABORAShop"/>
           <Buttons variant="tertiary" text="Instagram" link="https://www.instagram.com/sabora_studio/"/>
@@ -82,17 +81,17 @@ console.log(myData);
     background-color: var(--lightsand);
   }
 
-  .heading {
-    display: flex;
-    justify-content: center;
-  }
-
-  .artpiecetitle {
+  .artpiecetitlemobile {
     font-size: 35px;
   }
 
-  .artpiece {
-    display: flex;
+  .artpiecetitledesktop {
+    display: none;
+  }
+
+  .artpiecebox {
+    display: grid;
+    text-align: center;
     justify-content: center;
   }
 
@@ -104,6 +103,7 @@ console.log(myData);
     /* dette giver margin - men så er der ingen farve mellem main og footer? */
     border-style: solid;
     color: var(--green);
+    border-width: 2px;
     border-radius: 25px;
     padding: 15px;
   }
@@ -115,6 +115,8 @@ console.log(myData);
 
   .howtobuy {
     color: var(--brown);
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .iconbox {
@@ -141,7 +143,29 @@ console.log(myData);
       background-color: var(--lightsand);
     }
 
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+
+    .artpiecetitlemobile {
+      display: none;
+    }
+
+    .artpiecetitledesktop {
+    display: block;
+    }
+
+    .artpiece {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      scale: 1.3;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
     
   }
-
 </style>
