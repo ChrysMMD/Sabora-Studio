@@ -36,7 +36,19 @@ const data = await response.json();
       <!-- <a href="/portfolio">Portfolio</a>
       <a href="/singleview">Singleview</a> -->
       <Navigation />
+
+      <div class="gurilander"></div>
+      <div class="header_tekst">
+        <h2>Sabora Studio</h2>
+        <h1>Sabora Studio</h1>
+
+        <h3>Sabrine Benmoumou</h3>
+      </div>
+      <section>
+        <a href="#anchor" class="scroll-down"></a>
+      </section>
     </header>
+
     <main>
       <h1>This is a heading</h1>
       <p>And here is some paragraph text</p>
@@ -86,6 +98,28 @@ const data = await response.json();
         <input type="radio" name="slider" id="slide4" />
         <div id="slides">
           <h2>Reviews</h2>
+
+          <div class="full_reviews">
+            <Reviews
+              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien.  "
+              navn="Lærke Bue"
+            />
+
+            <Reviews
+              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien."
+              navn="Frederikke Nygaard"
+            />
+
+            <Reviews
+              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien.  "
+              navn="Chrystal Jørgensen"
+            />
+
+            <Reviews
+              tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan augue sed dui porttitor, eu aliquet leo placerat. Curabitur ligula augue, congue id semper ut, tincidunt ut sapien."
+              navn="Hasse Bill"
+            />
+          </div>
 
           <div id="overflow">
             <div class="inner">
@@ -174,6 +208,112 @@ body {
   }
 
   /* ----- section: portfolio slut ----- */
+
+  /* ---- HEADER ----- */
+  header {
+    background-color: var(--green);
+    width: 100%;
+    height: 600px;
+  }
+  .header_tekst {
+    width: fit-content;
+    margin: auto;
+  }
+
+  header h3 {
+    font-family: Amiko;
+    font-weight: lighter;
+    font-size: 20px;
+    color: var(--pink);
+    text-align: center;
+  }
+  h1 {
+    color: var(--lightsand);
+    position: relative;
+    font-size: 40px;
+  }
+
+  header h2 {
+    font-size: 40px;
+    position: absolute;
+    top: 6%;
+    margin-left: -10px;
+    text-align: center;
+    color: var(--green);
+    text-shadow:
+      1px 1px 0 var(--darksand),
+      -1px 1px 0 var(--darksand),
+      -1px -1px 0 var(--darksand),
+      1px -1px 0 var(--darksand);
+  }
+
+  /* ---- BOUNCE SCROLL DOWN ---- */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .scroll-down {
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in 3s;
+    transition: all 0.5s ease-in 3s;
+  }
+
+  .scroll-down {
+    position: absolute;
+    bottom: 400px;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--darksand);
+    background-size: 14px auto;
+    border-radius: 50%;
+    z-index: 2;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+
+  .scroll-down:before {
+    position: absolute;
+    top: calc(48% - 8px);
+    left: calc(47.7% - 6px);
+    transform: rotate(-46deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid var(--pink);
+    border-width: 0px 0 2px 2px;
+  }
+
+  @keyframes bounce {
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+    60% {
+      -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+  }
+
+  .full_reviews {
+    display: none;
+  }
 
   /* ----- CAUROSEL ----- 
   Link til code:
@@ -314,8 +454,10 @@ body {
       width: 100%;
       background-color: var(--darksand);
     }
+  }
 
-    #slides {
+  @media (min-width: 850px) {
+    #overflow {
       display: none;
     }
 
@@ -325,6 +467,14 @@ body {
 
     #controls {
       display: none;
+    }
+
+    .full_reviews {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-self: center;
     }
   }
 </style>
