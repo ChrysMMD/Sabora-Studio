@@ -3,7 +3,7 @@ const {data} = Astro.props;
 ---
 <article>
      <div class="container">
-          <a href={`artwork/${data.slug}`}>
+          <a href={`/artwork/${data.slug}`}>
                <img src=`/imgs/${data.imgpath}` alt={data.title} class="image">
                <div class="overlay">
                     <div class="text"><p>{data.title}</p></div>
