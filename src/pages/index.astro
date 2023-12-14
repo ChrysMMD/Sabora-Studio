@@ -37,7 +37,9 @@ const data = await response.json();
       <a href="/singleview">Singleview</a> -->
       <Navigation />
 
-      <div class="gurilander"></div>
+      <div class="gurilander">
+        <img src="../../public/icons/Guirlande.svg" alt="guirlande" />
+      </div>
       <div class="header_tekst">
         <h2>Sabora Studio</h2>
         <h1>Sabora Studio</h1>
@@ -50,19 +52,17 @@ const data = await response.json();
     </header>
 
     <main>
-      <h1>This is a heading</h1>
-      <p>And here is some paragraph text</p>
       <section class="portfoliobox" id="anchor">
         <h2>Latest work</h2>
         <article class="cardgrid">
-        {
-          data.map((artpiece) => {
-            return <Card data={artpiece} />;
-          })
-        }
+          {
+            data.map((artpiece) => {
+              return <Card data={artpiece} />;
+            })
+          }
         </article>
         <div class="buttonbox">
-          <Buttons variant="tertiary" text="Portfolio" link="/portfolio"/>
+          <Buttons variant="tertiary" text="Portfolio" link="/portfolio" />
         </div>
       </section>
       <section class="infographic">
@@ -186,10 +186,10 @@ const data = await response.json();
 </html>
 
 <style>
+  body {
+    background-color: var(--lightsand);
+  }
 
-body {
-  background-color: var(--lightsand);
-}
   /* ----- section: portfolio start ----- */
   .portfoliobox {
     background-color: var(--lightsand);
@@ -218,6 +218,7 @@ body {
   .header_tekst {
     width: fit-content;
     margin: auto;
+    margin-top: 80px;
   }
 
   header h3 {
@@ -236,7 +237,7 @@ body {
   header h2 {
     font-size: 40px;
     position: absolute;
-    top: 6%;
+    margin-top: -10px;
     margin-left: -10px;
     text-align: center;
     color: var(--green);
@@ -245,6 +246,14 @@ body {
       -1px 1px 0 var(--darksand),
       -1px -1px 0 var(--darksand),
       1px -1px 0 var(--darksand);
+  }
+
+  .gurilander {
+    width: 100%;
+  }
+
+  .gurilander img {
+    width: 100%;
   }
 
   /* ---- BOUNCE SCROLL DOWN ---- */
@@ -260,7 +269,7 @@ body {
 
   .scroll-down {
     position: absolute;
-    bottom: 400px;
+    bottom: 250px;
     left: 50%;
     margin-left: -16px;
     display: block;
@@ -326,7 +335,6 @@ body {
 
   #slider {
     margin: 0 auto;
-    width: 800px;
     max-width: 100%;
     text-align: center;
     background-color: var(--green);
@@ -430,17 +438,16 @@ body {
     text-align: center;
   }
   @media (min-width: 700px) {
-  
-  /* ----- section: portfolio start ----- */
-  .cardgrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    grid-template-rows: 1fr;
-    gap: 2em;
-    padding: 40px;
-  }
+    /* ----- section: portfolio start ----- */
+    .cardgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-rows: 1fr;
+      gap: 2em;
+      padding: 40px;
+    }
 
-  /* ----- section: portfolio slut ----- */
+    /* ----- section: portfolio slut ----- */
     .indhold {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -457,6 +464,9 @@ body {
   }
 
   @media (min-width: 850px) {
+    #slides {
+      width: 100%;
+    }
     #overflow {
       display: none;
     }

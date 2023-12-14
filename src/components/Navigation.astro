@@ -4,7 +4,7 @@ import Buttons from "./Buttons.astro";
 
 <div class="navigation">
   <div class="logo">
-    <img src="../../public/logo_rigtigt.png" alt="logo" />
+    <a href="/"><img src="../../public/icons/Kande.svg" alt=" logo" /></a>
   </div>
 
   <div class="nav_linje">
@@ -42,8 +42,9 @@ import Buttons from "./Buttons.astro";
     display: grid;
     grid-template-columns: 1fr 2fr;
     width: 100%;
-    height: 50px;
+    height: 60px;
     background-color: #798f8a;
+    align-content: center;
   }
 
   .hamburger {
@@ -52,6 +53,7 @@ import Buttons from "./Buttons.astro";
   .logo,
   img {
     height: 50px;
+    padding: 5px;
   }
 
   .nav_linje {
