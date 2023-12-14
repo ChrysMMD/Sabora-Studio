@@ -29,8 +29,14 @@ const data = await response.json();
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Sabora Studio Morrocan artist making poster art, salg af kunstplakater og farverige malerier" />
-		<meta name="keywords" content="Sabora Studio Morrocan poster art kunstplakater farverige malerier" />
+    <meta
+      name="description"
+      content="Sabora Studio Morrocan artist making poster art, salg af kunstplakater og farverige malerier"
+    />
+    <meta
+      name="keywords"
+      content="Sabora Studio Morrocan poster art kunstplakater farverige malerier"
+    />
     <title>Sabora Studio - Morrocan Art</title>
   </head>
   <body>
@@ -40,7 +46,7 @@ const data = await response.json();
       <Navigation />
 
       <div class="gurilander">
-        <img src="../../public/icons/Guirlande.svg" alt="Sabora Studio guirlande" />
+        <img src="/icons/Guirlande.svg" alt="Sabora Studio guirlande" />
       </div>
       <div class="header_tekst">
         <h2>Sabora Studio</h2>
@@ -71,22 +77,22 @@ const data = await response.json();
         <h2>Shipping Journey</h2>
         <div class="indhold">
           <Infographic
-            billede="../../public/icons/kort.svg"
+            billede="/icons/kort.svg"
             overskrift="Order"
             beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           />
           <Infographic
-            billede="../../public/icons/print.svg"
+            billede="/icons/print.svg"
             overskrift="Print"
             beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           />
           <Infographic
-            billede="../../public/icons/mail.svg"
+            billede="/icons/mail.svg"
             overskrift="Mail"
             beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           />
           <Infographic
-            billede="../../public/icons/hus.svg"
+            billede="/icons/hus.svg"
             overskrift="Home"
             beskrivelse="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           />
