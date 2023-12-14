@@ -40,12 +40,18 @@ const data = await response.json();
     <main>
       <h1>This is a heading</h1>
       <p>And here is some paragraph text</p>
-      <section>
+      <section class="portfoliobox">
+        <h2>Latest work</h2>
+        <article class="cardgrid">
         {
           data.map((artpiece) => {
             return <Card data={artpiece} />;
           })
         }
+        </article>
+        <div class="buttonbox">
+          <Buttons variant="tertiary" text="Portfolio" link="/portfolio"/>
+        </div>
       </section>
       <section class="infographic">
         <h2>Shippingjourney</h2>
@@ -146,6 +152,29 @@ const data = await response.json();
 </html>
 
 <style>
+
+body {
+  background-color: var(--lightsand);
+}
+  /* ----- section: portfolio start ----- */
+  .portfoliobox {
+    background-color: var(--lightsand);
+  }
+
+  .cardgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 1em;
+  }
+
+  .buttonbox {
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* ----- section: portfolio slut ----- */
+
   /* ----- CAUROSEL ----- 
   Link til code:
   https://codepen.io/anna_blok/pen/eYYRbQY
@@ -261,6 +290,17 @@ const data = await response.json();
     text-align: center;
   }
   @media (min-width: 700px) {
+  
+  /* ----- section: portfolio start ----- */
+  .cardgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 2em;
+    padding: 40px;
+  }
+
+  /* ----- section: portfolio slut ----- */
     .indhold {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;

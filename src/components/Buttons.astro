@@ -49,24 +49,24 @@ const { text, link, variant, size } = Astro.props;
     a,
     a:active,
     a:visited {
-      color: #fbe9dd;
+      color: var(--brown);
       font-family: Abril Fatface;
       text-decoration: none;
+      font-size: 11px;
     }
 
     .links {
       /* margin-left: 6px; */
       display: inline;
-      border: 1px solid #798f8a;
-      padding: 3px 20px;
+      /* border: 1px solid #798f8a;
+      padding: 3px 20px; */
     }
 
     /*HOVER BOKS*/
     a:hover {
       border: 1px solid #798f8a;
-      padding: 8px 12px;
-      margin-left: -13px;
-      margin-right: -13px;
+      padding: 4px 9px;
+      margin: -10px;
     }
   }
 
