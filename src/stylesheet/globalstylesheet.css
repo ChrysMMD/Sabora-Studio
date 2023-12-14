@@ -43,6 +43,7 @@ https://www.youtube.com/watch?v=vJGsNtqlJ98&list=PLCx1FpZ4Dtb3_siiU1YtaIKJmZEzu8
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--lightsand);
 }
 
 /*
@@ -117,18 +118,21 @@ html {
 
 h1,
 h2,
-h3,
-h4,
-h5 {
+h3 {
   font-family: AbrilFatface;
   font-size: 40px;
   color: var(--brown);
   /* --- OBS: dobbelttjek om dette clasher med ovenstående reset, hvor alle p og h får "overflow-wrap: break-word;" ---*/
 }
 
+h2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 p {
   font-family: Amiko;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--brown);
 }
 
