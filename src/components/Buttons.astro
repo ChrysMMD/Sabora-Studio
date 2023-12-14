@@ -25,7 +25,7 @@ const { text, link, variant, size } = Astro.props;
     a,
     a:active,
     a:visited {
-      color: #fbe9dd;
+      color: var(--lightsand);
       font-family: Abril Fatface;
       text-decoration: none;
       font-size: 25px;
@@ -33,8 +33,6 @@ const { text, link, variant, size } = Astro.props;
 
     .links {
       display: inline;
-      /* border: 1px solid #fcb0b5;
-      padding: 0px 20px; */
     }
 
     /*HOVER BOKS*/
@@ -52,22 +50,24 @@ const { text, link, variant, size } = Astro.props;
       color: #923a21;
       font-family: Abril Fatface;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 30px;
     }
 
     .links {
       /* margin-left: 6px; */
-      display: inline;
       border: 1px solid var(--green);
-      padding: 3px 20px;
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .links:hover {
+      background-color: var(--green);
     }
 
     /*HOVER BOKS*/
     a:hover {
       border: 1px solid var(--green);
-      padding: 8px 12px;
-      margin-left: -13px;
-      margin-right: -13px;
     }
   }
 
@@ -83,38 +83,44 @@ const { text, link, variant, size } = Astro.props;
 
     .links {
       /* margin-left: 6px; */
-      display: inline;
-      border: 1px solid #fcb0b5;
-      padding: 3px 20px;
+      border: 1px solid var(--green);
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .links:hover {
+      background-color: var(--green);
     }
 
     /*HOVER BOKS*/
     a:hover {
-      border: 1px solid #fcb0b5;
-      padding: 8px 12px;
-      margin-left: -13px;
-      margin-right: -13px;
+      border: 1px solid var(--green);
     }
   }
 
   @media (min-width: 600px) {
     .primary {
-      a, a:active, a:visited {
-      color: #fbe9dd;
-      font-family: Abril Fatface;
-      text-decoration: none;
-      font-size: 15px;
+      a,
+      a:active,
+      a:visited {
+        color: #fbe9dd;
+        font-family: Abril Fatface;
+        text-decoration: none;
+        font-size: 15px;
+      }
     }
-    
-  }
 
-  .tertiary {
-    a, a:active, a:visited {
-      color: #923a21;
-      font-family: Abril Fatface;
-      text-decoration: none;
-      font-size: 18px;
+    .tertiary {
+      a,
+      a:active,
+      a:visited {
+        color: #923a21;
+        font-family: Abril Fatface;
+        text-decoration: none;
+        font-size: 18px;
+      }
     }
   }
-}
 </style>
