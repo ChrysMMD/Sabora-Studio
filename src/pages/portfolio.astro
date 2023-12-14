@@ -25,7 +25,9 @@ const data = await response.json();
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Portfolio</title>
+    <meta name="description" content="Sabora Studio Morrocan artist making poster art, salg af kunstplakater og farverige malerier" />
+		<meta name="keywords" content="Sabora Studio Morrocan poster art kunstplakater farverige malerier" />
+    <title>Sabora Studio - Portfolio</title>
   </head>
   <body>
     <header>
@@ -84,12 +86,10 @@ const data = await response.json();
   gap: 1em;
 }
 }
-
-
 </style>
 
-<!-- ovenstående autofill + "minmax" på fx 160px, betyder at: HVIS skærmbredden bliver
-160px mindre, så fjerner den en column og fylder de tilbageværende columns ud med
+<!-- ovenstående autofill + "minmax" på fx 160px, betyder: 
+  - HVIS skærmbredden bliver 160px mindre, så fjerner den en column og fylder de tilbageværende columns ud med
 elementer. HVIS skærmbredden bliver 160px større, så tilføjer den en column og fylder
 ud. -->
 

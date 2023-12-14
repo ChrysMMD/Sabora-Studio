@@ -28,7 +28,7 @@ const { text, link, variant, size } = Astro.props;
       color: #fbe9dd;
       font-family: Abril Fatface;
       text-decoration: none;
-      font-size: 11px;
+      font-size: 25px;
     }
 
     .links {
@@ -49,21 +49,22 @@ const { text, link, variant, size } = Astro.props;
     a,
     a:active,
     a:visited {
-      color: #fbe9dd;
+      color: #923a21;
       font-family: Abril Fatface;
       text-decoration: none;
+      font-size: 20px;
     }
 
     .links {
       /* margin-left: 6px; */
       display: inline;
-      border: 1px solid #798f8a;
+      border: 1px solid var(--green);
       padding: 3px 20px;
     }
 
     /*HOVER BOKS*/
     a:hover {
-      border: 1px solid #798f8a;
+      border: 1px solid var(--green);
       padding: 8px 12px;
       margin-left: -13px;
       margin-right: -13px;
@@ -77,6 +78,7 @@ const { text, link, variant, size } = Astro.props;
       color: #923a21;
       font-family: Abril Fatface;
       text-decoration: none;
+      font-size: 20px;
     }
 
     .links {
@@ -95,9 +97,24 @@ const { text, link, variant, size } = Astro.props;
     }
   }
 
-  @media (max-width: 600px) {
+  @media (min-width: 600px) {
     .primary {
-      font-size: 16px;
+      a, a:active, a:visited {
+      color: #fbe9dd;
+      font-family: Abril Fatface;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    
+  }
+
+  .tertiary {
+    a, a:active, a:visited {
+      color: #923a21;
+      font-family: Abril Fatface;
+      text-decoration: none;
+      font-size: 18px;
     }
   }
+}
 </style>
