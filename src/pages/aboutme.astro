@@ -18,10 +18,35 @@ import Aboutcomponent from "../components/Aboutcomponent.astro";
       <Navigation />
     </header>
     <main>
-      <Aboutcomponent />
+      <Aboutcomponent
+        title="Sabrine Benmoumou"
+        img="/imgs/benmoumou.webp"
+        alt="selfportrait"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel non, molestias explicabo sint minus ab ullam. Dolores culpa expedita ex, harum delectus dolorem odit sequi perspiciatis natus ipsum! In explicabo debitis distinctio. Iure rem ut similique?"
+      />
+      <Aboutcomponent
+        title="Materials"
+        img="/imgs/materialsicon.webp"
+        alt="materials"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel non, molestias explicabo sint minus ab ullam. Dolores culpa expedita ex, harum delectus dolorem odit sequi perspiciatis natus ipsum! In explicabo debitis distinctio. Iure rem ut similique?"
+      />
+      <Aboutcomponent
+        title="Charity"
+        img="/imgs/charityicon.webp"
+        alt="charity"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel non, molestias explicabo sint minus ab ullam. Dolores culpa expedita ex, harum delectus dolorem odit sequi perspiciatis natus ipsum! In explicabo debitis distinctio. Iure rem ut similique?"
+      />
     </main>
     <footer>
       <Footer />
     </footer>
   </body>
 </html>
+
+<style>
+  body {
+    background-color: var(--lightsand);
+  }
+  @media screen and (min-width: 600px) {
+  }
+</style>

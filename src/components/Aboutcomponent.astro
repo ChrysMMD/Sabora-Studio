@@ -1,9 +1,85 @@
 ---
 import "../stylesheet/globalstylesheet.css";
+const { title, img, alt, text } = Astro.props;
 ---
 
-<article>
-    <h2></h2>
-    <img src="" alt="">
-    <p></p>
+<article class="aboutmebox">
+  <div>
+    <h2 class="aboutmetitlemobile">{title}</h2>
+    <img src={img} class="imageclass" alt={alt} />
+  </div>
+
+  <div>
+    <h2 class="aboutmetitledesktop">{title}</h2>
+    <div class="pbox">
+      <p class="ptext">
+        {text}
+      </p>
+    </div>
+  </div>
 </article>
+
+<style>
+  .aboutmetitlemobile {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .imageclass {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .ptext {
+    text-align: left;
+    max-width: 30ch;
+    font-size: 15px;
+  }
+
+  .pbox {
+  }
+  .aboutmebox {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .aboutmetitledesktop {
+    display: none;
+  }
+  img {
+  }
+  @media only screen and (min-width: 600px) {
+    .aboutmetitlemobile {
+      display: none;
+    }
+
+    .aboutmetitledesktop {
+      display: block;
+      text-align: left;
+    }
+
+    .imageclass {
+      max-width: 100%;
+    }
+
+    .ptext {
+      text-align: left;
+      max-width: auto;
+      font-size: 20px;
+      max-width: 65ch;
+    }
+  }
+
+  .pbox {
+    display: grid;
+    justify-content: center;
+  }
+  .aboutmebox {
+    margin-bottom: 50px;
+
+    padding: 20px;
+  }
+</style>

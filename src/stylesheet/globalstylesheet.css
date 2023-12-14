@@ -142,4 +142,16 @@ p {
     width: 80%;
     margin: auto;
   }
+  .aboutmebox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  main article:nth-child(even) div:last-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
 }
