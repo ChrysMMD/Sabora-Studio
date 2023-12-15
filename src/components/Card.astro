@@ -1,63 +1,63 @@
 ---
-const {data} = Astro.props;
+const { data } = Astro.props;
 ---
+
 <article>
-     <div class="container">
-          <a href={`/artwork/${data.slug}`}>
-               <img src=`/imgs/${data.imgpath}` alt={data.title} class="image">
-               <div class="overlay">
-                    <div class="text"><p>{data.title}</p></div>
-               </div>
-          </a>
-     </div>
+  <div class="container">
+    <a href={`/artwork/${data.slug}`} aria-label="Go to artwork">
+      <img src=`/imgs/${data.imgpath}` alt={data.title} class="image" />
+      <div class="overlay">
+        <div class="text"><p>{data.title}</p></div>
+      </div>
+    </a>
+  </div>
 </article>
 
 <style>
+  img {
+    border-radius: 25px;
+  }
 
-img {
-     border-radius: 25px;
-}
+  /* Hover-effekt herunder, og taget herfra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade */
+  .container {
+    position: relative;
+    width: 100%;
+  }
 
-/* Hover-effekt herunder, og taget herfra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade */
-.container {
-  position: relative;
-  width: 100%;
-}
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+  .overlay {
+    position: absolute;
+    border-radius: 25px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: var(--darksand);
+  }
 
-.overlay {
-  position: absolute;
-  border-radius: 25px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: var(--darksand);
-}
+  .container:hover .overlay {
+    opacity: 0.9;
+  }
 
-.container:hover .overlay {
-  opacity: .9;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-/* Hover-effekt slut */
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  /* Hover-effekt slut */
 </style>
