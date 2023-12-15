@@ -1,11 +1,11 @@
 ---
 import "../stylesheet/globalstylesheet.css";
-const { text, link, variant, size } = Astro.props;
+const { text, link, variant, target } = Astro.props;
 ---
 
 <div class={variant}>
   <div class="links">
-    <a href={link}>{text}</a>
+    <a target={target} href={link}>{text}</a>
   </div>
 </div>
 

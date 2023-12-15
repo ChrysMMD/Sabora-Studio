@@ -33,8 +33,23 @@ console.log(myData);
     <link rel="icon" type="image/svg+xml" href="/icons/Kande.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Sabora Studio Morrocan artist making poster art, salg af kunstplakater og farverige malerier" />
-		<meta name="keywords" content="Sabora Studio Morrocan poster art kunstplakater farverige malerier" />
+    <meta
+      name="description"
+      content="Sabora Studio Morrocan artist making poster art, salg af kunstplakater og farverige malerier"
+    />
+    <meta
+      name="keywords"
+      content="Sabora Studio Morrocan poster art kunstplakater farverige malerier"
+    />
+    <title>Sabora Studio - Art</title>
+    <meta
+      name="description"
+      content="Sabora Studio Morrocan artist making poster art, salg af kunstplakater og farverige malerier"
+    />
+    <meta
+      name="keywords"
+      content="Sabora Studio Morrocan poster art kunstplakater farverige malerier"
+    />
     <title>Sabora Studio | Morrocan Poster Art</title>
   </head>
   <body>
@@ -44,33 +59,49 @@ console.log(myData);
     <main>
       <div class="artpiecebox">
         <h2 class="artpiecetitlemobile">{myData.title}</h2>
-        <img class="artpiece" src=`/imgs/${myData.imgpath}` alt={myData.title} />
+        <img
+          class="artpiece"
+          src=`/imgs/${myData.imgpath}`
+          alt={myData.title}
+        />
       </div>
       <div class="box">
         <h2 class="artpiecetitledesktop">{myData.title}</h2>
         <p>{myData.description}</p>
         <div class="sizes">
           <div class="sizebox">
-            <img class="size" src="/icons/a3.svg" alt="size a3"/>
+            <img class="size" src="/icons/a3.svg" alt="size a3" />
             <p class="dimensions">297 x 420 mm</p>
           </div>
           <div class="sizebox">
-            <img class="size" src="/icons/a4.svg" alt="size a4"/>
+            <img class="size" src="/icons/a4.svg" alt="size a4" />
             <p class="dimensions">210 x 297 mm</p>
           </div>
           <div class="sizebox">
-            <img class="size" src="/icons/a5.svg" alt="size a5"/>
+            <img class="size" src="/icons/a5.svg" alt="size a5" />
             <p class="dimensions">148 x 210 mm</p>
           </div>
         </div>
         <p class="howtobuy"><b>How to buy this?</b></p>
-        <p>To buy my artwork visit my profile on Etsy or send med a DM on Instagram.</p>
+        <p>
+          To buy my artwork visit my profile on Etsy or send med a DM on
+          Instagram.
+        </p>
         <div class="iconbox">
-          <Buttons variant="tertiary" text="Etsy" link="https://www.etsy.com/dk-en/shop/SABORAShop"/>
-          <Buttons variant="tertiary" text="Instagram" link="https://www.instagram.com/sabora_studio/"/>
+          <Buttons
+            variant="tertiary"
+            target="blank"
+            text="Etsy"
+            link="https://www.etsy.com/dk-en/shop/SABORAShop"
+          />
+          <Buttons
+            variant="tertiary"
+            target="blank"
+            text="Instagram"
+            link="https://www.instagram.com/sabora_studio/"
+          />
         </div>
       </div>
-      
     </main>
     <footer>
       <Footer />
@@ -158,9 +189,9 @@ console.log(myData);
     }
 
     .artpiecetitledesktop {
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 10px;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
 
     .artpiece {
@@ -172,6 +203,5 @@ console.log(myData);
     h2 {
       font-size: 30px;
     }
-    
   }
 </style>
